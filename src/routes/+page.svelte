@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Avatar } from "@skeletonlabs/skeleton";
+  import { onMount } from "svelte";
 
   let elemCarousel: HTMLDivElement;
   const unsplashIds = [
@@ -28,50 +29,59 @@
     elemCarousel.scroll(x, 0);
   }
 
+  onMount(() => {
     // Auto-advance carousel every 3 seconds
-    setInterval(() => {
-    carouselRight();
-  }, 3000);
+    const interval = setInterval(() => {
+      if (elemCarousel) {
+        carouselRight();
+      }
+    }, 3000);
 
-
+    return () => clearInterval(interval);
+  });
 </script>
 
-<div class="container mx-auto p-4 space-y-8">
-  <Avatar src="https://i.pravatar.cc/" />
-
-  <h1>Welcome to Astra Injury Rehabilitation Specialists</h1>
-
-  <div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
-    <!-- Button: Left -->
-    <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-      <i class="fa-solid fa-arrow-left" />
-    </button>
-    <!-- Full Images -->
-    <div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
-      {#each unsplashIds as unsplashId}
-        <img
-          class="snap-center w-[1024px] rounded-container-token"
-          src='https://images.unsplash.com/5/unsplash-bonus.jpg?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          alt={unsplashId}
-          loading="lazy"
-        />
-      {/each}
-    </div>
-    <!-- Button: Right -->
-    <button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
-      <i class="fa-solid fa-arrow-right" />
-    </button>
+<!-- CAROUSEL -->
+<div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
+  <!-- Button: Left -->
+  <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
+    <i class="fa-solid fa-arrow-left" />
+  </button>
+  <!-- Full Images -->
+  <div
+    bind:this={elemCarousel}
+    class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto"
+  >
+    {#each unsplashIds as unsplashId}
+      <img
+        class="snap-center h-[360px] rounded-container-token"
+        src="https://images.unsplash.com/5/unsplash-bonus.jpg?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt={unsplashId}
+        loading="lazy"
+      />
+    {/each}
   </div>
-  
-  <h1 class="h1">Hello Skeleton</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-  <section>
-    <a class="btn variant-filled-primary" href="https://kit.svelte.dev/"
-      >SvelteKit</a
-    >
-    <a class="btn variant-filled-secondary" href="https://tailwindcss.com/"
-      >Tailwind</a
-    >
-    <a class="btn variant-filled-tertiary" href="https://github.com/">GitHub</a>
-  </section>
+  <!-- Button: Right -->
+  <button
+    type="button"
+    class="btn-icon variant-filled"
+    on:click={carouselRight}
+  >
+    <i class="fa-solid fa-arrow-right" />
+  </button>
 </div>
+
+<h1 class="h1">Hello Skeleton</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<section>
+  <a class="btn variant-filled-primary" href="https://kit.svelte.dev/"
+    >SvelteKit</a
+  >
+  <a class="btn variant-filled-secondary" href="https://tailwindcss.com/"
+    >Tailwind</a
+  >
+  <a class="btn variant-filled-tertiary" href="https://github.com/">GitHub</a>
+</section>
+<Avatar src="https://i.pravatar.cc/" />
+
+<h1>Welcome to Astra Injury Rehabilitation Specialists</h1>
