@@ -1,8 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
+<h1>Welcome to Astra Injury Rehabilitation Specialists</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<nav>
-	<a href="/">home</a>
-	<a href="/about">about</a>
-  <a href="/FAQ">FAQ</a>
-  <a href="/contact">contact</a>
-</nav>
