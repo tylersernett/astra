@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
   import "../app.css";
   import { AppShell, AppBar } from "@skeletonlabs/skeleton";
+
+  // $: classesActive = (href: string) => (href === $page.url.pathname ? '!variant-filled-primary' : '');
 </script>
 
 <!-- <nav>
@@ -18,40 +20,32 @@
       slottrail="place-content-end"
     >
       <svelte:fragment slot="lead">(icon)</svelte:fragment>
-      Astra Injury Rehabilitation Specialists
+      <h1>Astra Injury Rehabilitation Specialists</h1>
+
       <svelte:fragment slot="trail">
         <nav class="list-nav">
           <ul class="flex space-x-4">
             <li>
               <a href="/">
-                <span class="w-6 text-center"
-                  ><i class="fa-solid fa-home"></i></span
-                >
-                <span>Home</span>
+                <span class="flex-auto">Home</span>
               </a>
             </li>
+            <!-- <li>
+              <a href={href} class="{classesActive(href)}">Page</a>
+            </li> -->
             <li>
               <a href="/about">
-                <span class="w-6 text-center"
-                  ><i class="fa-solid fa-book"></i></span
-                >
-                <span>About</span>
+                <span class="flex-auto">About</span>
               </a>
             </li>
             <li>
               <a href="/contact">
-                <span class="w-6 text-center"
-                  ><i class="fa-solid fa-bullhorn"></i></span
-                >
-                <span>Contact</span>
+                <span class="flex-auto">Contact</span>
               </a>
             </li>
             <li>
               <a href="/FAQ">
-                <span class="w-6 text-center"
-                  ><i class="fa-solid fa-bullhorn"></i></span
-                >
-                <span>FAQ</span>
+                <span class="flex-auto">FAQ</span>
               </a>
             </li>
           </ul>
@@ -63,7 +57,9 @@
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
-  <slot></slot>
+  <div class="container mx-auto p-4 space-y-8 pb-16">
+    <slot></slot>
+  </div>
   <!-- ---- / ---- -->
   <!-- (pageFooter) -->
   <svelte:fragment slot="footer">
