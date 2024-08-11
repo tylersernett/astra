@@ -66,22 +66,24 @@
   <slot></slot>
   <!-- ---- / ---- -->
   <!-- (pageFooter) -->
-  <svelte:fragment slot="pageFooter">
-    <div class="container mx-auto p-4 space-y-8">
-      <div class="flex justify-center items-center space-x-2">
-        <span>Astra Injury Rehabilitation Specialists</span>
-        <span>|</span>
-        <span>209 Saint Louis Ave, Fort Worth, TX 76104</span>
-        <span>|</span>
-        <span>817-897-5190</span>
-        <span>|</span>
-        <span>kdeosarran@astra-consultants.com</span>
-      </div>
-      <div class="text-center">
-        <br />
-        Copyright © 2024 Astra Injury Rehabilitation Specialists
+  <svelte:fragment slot="footer">
+    <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100">
+      <div class="container mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
+        >
+          <span class='font-bold'>Astra Injury Rehabilitation Specialists</span>
+          <span>209 Saint Louis Ave, Fort Worth, TX 76104</span>
+          <span>817-897-5190</span>
+          <span>kdeosarran@astra-consultants.com</span>
+        </div>
+
+        <div class="text-center py-8 pb-8">
+          <h6 class="h6 text-sm ">
+            Copyright © 2024 Astra Injury Rehabilitation Specialists
+          </h6>
+        </div>
       </div>
     </div>
-    
   </svelte:fragment>
 </AppShell>
