@@ -52,8 +52,8 @@
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
+  <Carousel/>
   <div class="container mx-auto p-4 space-y-8 pb-16">
-    <Carousel/>
     <slot></slot>
   </div>
   <!-- ---- / ---- -->
