@@ -39,32 +39,39 @@
   });
 </script>
 
-<!-- CAROUSEL -->
-<div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
-  <!-- Button: Left -->
-  <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-    <i class="fa-solid fa-arrow-left" />
-  </button>
-  <!-- Full Images -->
-  <div
-    bind:this={elemCarousel}
-    class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto"
-  >
-    {#each unsplashIds as unsplashId}
-      <img
-        class="snap-center h-[360px] rounded-container-token"
-        src={unsplashId}
-        alt={unsplashId}
-        loading="lazy"
-      />
-    {/each}
+<!-- Carousel Container with Background Image -->
+<div class="relative w-full h-[560px] bg-cover bg-center bg-fixed" style="background-image: url('/images/bg-mag.jpg');">
+   <!-- Fade Overlay -->
+   <div class="absolute inset-0 bg-primary-50 opacity-40"></div>
+   <div class="absolute inset-0 opacity-60 bg-gradient-to-br variant-gradient-primary-secondary"></div>
+
+  <!-- CAROUSEL -->
+  <div class="pt-40 p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center relative z-10 bg-transparent">
+    <!-- Button: Left -->
+    <button type="button" class="btn-icon variant-filled opacity-50" on:click={carouselLeft}>
+      <i class="fa-solid fa-chevron-left" />
+    </button>
+    <!-- Full Images -->
+    <div
+      bind:this={elemCarousel}
+      class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden"
+    >
+      {#each unsplashIds as unsplashId}
+        <img
+          class="snap-center h-[260px] rounded-container-token"
+          src={unsplashId}
+          alt={unsplashId}
+          loading="lazy"
+        />
+      {/each}
+    </div>
+    <!-- Button: Right -->
+    <button
+      type="button"
+      class="btn-icon variant-filled opacity-50"
+      on:click={carouselRight}
+    >
+      <i class="fa-solid fa-chevron-right" />
+    </button>
   </div>
-  <!-- Button: Right -->
-  <button
-    type="button"
-    class="btn-icon variant-filled"
-    on:click={carouselRight}
-  >
-    <i class="fa-solid fa-arrow-right" />
-  </button>
 </div>
