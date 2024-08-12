@@ -69,14 +69,16 @@
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
         >
           <span class='font-bold'>Astra Injury Rehabilitation Specialists</span>
-          <span>209 Saint Louis Ave, Fort Worth, TX 76104</span>
-          <span>817-897-5190</span>
-          <span>kdeosarran@astra-consultants.com</span>
+          <span><a href='https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6'>209 Saint Louis Ave, Fort Worth, TX 76104</a></span>
+          <span><a href='tel:817-897-5190'>817-897-5190</a></span>
+          <span><a href='mailto:kdeosarran@astra-consultants.com'>kdeosarran@astra-consultants.com</a></span>
         </div>
 
         <div class="text-center py-8 pb-8">
           <h6 class="h6 text-sm ">
             Copyright © 2024 Astra Injury Rehabilitation Specialists
+            <br/>
+            Design: <a href='https://www.github.com/tylersernett'>Tyler Johnson</a>
           </h6>
         </div>
       </div>
