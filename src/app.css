@@ -4,6 +4,6 @@
 html, body { @apply h-full overflow-hidden; }
 
 :root [data-theme='vintage'] {
-  --theme-font-family-base: 'roboto', sans-serif;
-  --theme-font-family-heading: 'roboto', sans-serif;
+  --theme-font-family-base: 'lato', sans-serif;
+  --theme-font-family-heading: 'lato', sans-serif;
 }
