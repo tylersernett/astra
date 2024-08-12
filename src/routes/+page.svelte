@@ -1,87 +1,38 @@
-<script lang="ts">
-  import { Avatar } from "@skeletonlabs/skeleton";
-  import { onMount } from "svelte";
-
-  let elemCarousel: HTMLDivElement;
-  const unsplashIds = [
-    "vjUokUWbFOs",
-    "1aJuPtQJX_I",
-    "Jp6O3FFRdEI",
-    "I3C_eojFVQY",
-    "s0fXOuyTH1M",
-    "z_X0PxmBuIQ",
-  ];
-
-  function carouselLeft(): void {
-    const x =
-      elemCarousel.scrollLeft === 0
-        ? elemCarousel.clientWidth * elemCarousel.childElementCount // loop
-        : elemCarousel.scrollLeft - elemCarousel.clientWidth; // step left
-    elemCarousel.scroll(x, 0);
-  }
-
-  function carouselRight(): void {
-    const x =
-      elemCarousel.scrollLeft ===
-      elemCarousel.scrollWidth - elemCarousel.clientWidth
-        ? 0 // loop
-        : elemCarousel.scrollLeft + elemCarousel.clientWidth; // step right
-    elemCarousel.scroll(x, 0);
-  }
-
-  onMount(() => {
-    // Auto-advance carousel every 3 seconds
-    const interval = setInterval(() => {
-      if (elemCarousel) {
-        carouselRight();
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  });
-</script>
-
-<!-- CAROUSEL -->
-<div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
-  <!-- Button: Left -->
-  <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-    <i class="fa-solid fa-arrow-left" />
-  </button>
-  <!-- Full Images -->
-  <div
-    bind:this={elemCarousel}
-    class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto"
-  >
-    {#each unsplashIds as unsplashId}
-      <img
-        class="snap-center h-[360px] rounded-container-token"
-        src="https://images.unsplash.com/5/unsplash-bonus.jpg?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt={unsplashId}
-        loading="lazy"
-      />
-    {/each}
+<div id='80%-width' class="mx-auto w-4/5">
+  <h2 class="h2 text-center mb-8">
+    Board Certified Physicians Treating Injuries from Car Accidents in the Fort
+    Worth Area
+  </h2>
+  <div class="space-y-4 mx-auto">
+    <p>
+      We are a network of board-certified physicians and surgeons (MD and DO),
+      doctors of dental surgery (DDS), imaging centers, pharmacies, surgery
+      centers, and hospitals providing medical care to personal injury patients
+      in Fort Worth, Texas and the surrounding areas. Physician injury
+      consultants doctors provide care to patients injured in car accidents
+      through a medical lien or personal injury protection in the Fort Worth
+      area.
+    </p>
+    <p>
+      It is important your injuries are diagnosed and treated as quickly as
+      possible, even if you do not have an attorney. Call us first to see a
+      doctor and begin treatment.
+    </p>
+    <p>
+      If you have been treated in an emergency room due to a car accident and
+      cannot find a doctor to see you for follow-up care, we can probably help.
+      We can arrange an appointment with a board-certified physician experienced
+      in treating injuries from motor vehicle accidents and quickly obtain your
+      ER treatment records for your doctor.
+    </p>
+    <p>
+      Call our appointment line at <a href="tel:817-897-5190" class="anchor"
+        >817-897-5190</a
+      >
+      or
+      <a class="anchor" href="mailto:kdeosarran@astra-consultants.com"
+        >email us</a
+      > today.
+    </p>
   </div>
-  <!-- Button: Right -->
-  <button
-    type="button"
-    class="btn-icon variant-filled"
-    on:click={carouselRight}
-  >
-    <i class="fa-solid fa-arrow-right" />
-  </button>
 </div>
-
-<h1 class="h1">Hello Skeleton</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-<section>
-  <a class="btn variant-filled-primary" href="https://kit.svelte.dev/"
-    >SvelteKit</a
-  >
-  <a class="btn variant-filled-secondary" href="https://tailwindcss.com/"
-    >Tailwind</a
-  >
-  <a class="btn variant-filled-tertiary" href="https://github.com/">GitHub</a>
-</section>
-<Avatar src="https://i.pravatar.cc/" />
-
-<h1>Welcome to Astra Injury Rehabilitation Specialists</h1>
