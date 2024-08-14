@@ -7,3 +7,7 @@ html, body { @apply h-full overflow-hidden; }
   --theme-font-family-base: 'lato', sans-serif;
   --theme-font-family-heading: 'lato', sans-serif;
 }
+
+#blurred-bg {
+  backdrop-filter: blur(3px);
+}

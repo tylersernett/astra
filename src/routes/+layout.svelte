@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css";
   import { AppShell, AppBar } from "@skeletonlabs/skeleton";
-  import Carousel from '../lib/components/Carousel.svelte';
+  import CarouselCombo from '../lib/components/CarouselCombo.svelte';
 
   // $: classesActive = (href: string) => (href === $page.url.pathname ? '!variant-filled-primary' : '');
 </script>
@@ -13,7 +13,7 @@
       slotdefault="place-self-center"
       slottrail="place-content-end"
     >
-      <svelte:fragment slot="lead">(icon)</svelte:fragment>
+      <svelte:fragment slot="lead"><i class="fa-solid fa-star-of-life" /></svelte:fragment>
       <h1 class='font-bold'><a href='/'>Astra Injury Rehabilitation Specialists</a></h1>
 
       <svelte:fragment slot="trail">
@@ -52,7 +52,7 @@
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
-  <Carousel/>
+  <CarouselCombo/>
   <div class="container mx-auto p-4 space-y-8 pb-16">
     <slot></slot>
   </div>

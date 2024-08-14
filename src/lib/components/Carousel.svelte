@@ -2,13 +2,7 @@
   import { onMount } from "svelte";
 
   let elemCarousel: HTMLDivElement;
-  const unsplashIds = [
-    "images/emergency.jpg",
-    "images/ambulance.jpg",
-    "images/car-collision.jpg",
-    "images/dallas-ambulance.jpg",
-    "images/eblanket.jpg",
-  ];
+  export let imageIds: string[] = [];
 
   function carouselLeft(): void {
     const x =
@@ -28,50 +22,49 @@
   }
 
   onMount(() => {
-    // Auto-advance carousel every 3 seconds
-    const interval = setInterval(() => {
-      if (elemCarousel) {
-        carouselRight();
-      }
-    }, 3000);
+  let timeoutId: number; // Declare a variable to store the timeout ID
 
-    return () => clearInterval(interval);
+  function autoAdvanceCarousel() {
+    if (elemCarousel) {
+      carouselRight();
+    }
+
+    // Set a random timeout between 3 and 4 seconds (3000 to 4000 ms)
+    const randomTimeout = Math.random() * 1000 + 3000;
+    timeoutId = setTimeout(autoAdvanceCarousel, randomTimeout) as unknown as number;
+  }
+
+  // Start the auto-advance
+  autoAdvanceCarousel();
+
+  return () => clearTimeout(timeoutId); // Use the timeout ID to clear the timeout
   });
 </script>
 
-<!-- Carousel Container with Background Image -->
-<div class="relative w-full h-[560px] bg-cover bg-center bg-fixed" style="background-image: url('/images/bg-mag.jpg');">
-   <!-- Fade Overlay -->
-   <div class="absolute inset-0 bg-primary-50 opacity-40"></div>
-   <div class="absolute inset-0 opacity-60 bg-gradient-to-br variant-gradient-primary-secondary"></div>
-
-  <!-- CAROUSEL -->
-  <div class="pt-40 p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center relative z-10 bg-transparent">
-    <!-- Button: Left -->
-    <button type="button" class="btn-icon variant-filled opacity-50" on:click={carouselLeft}>
-      <i class="fa-solid fa-chevron-left" />
-    </button>
-    <!-- Full Images -->
-    <div
-      bind:this={elemCarousel}
-      class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden"
-    >
-      {#each unsplashIds as unsplashId}
-        <img
-          class="snap-center h-[260px] rounded-container-token"
-          src={unsplashId}
-          alt={unsplashId}
-          loading="lazy"
-        />
-      {/each}
-    </div>
-    <!-- Button: Right -->
-    <button
-      type="button"
-      class="btn-icon variant-filled opacity-50"
-      on:click={carouselRight}
-    >
-      <i class="fa-solid fa-chevron-right" />
-    </button>
+<!-- CAROUSEL -->
+  <!-- Button: Left -->
+  <button type="button" class="btn-icon variant-filled opacity-50" on:click={carouselLeft}>
+    <i class="fa-solid fa-chevron-left" />
+  </button>
+  <!-- Full Images -->
+  <div
+    bind:this={elemCarousel}
+    class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden"
+  >
+    {#each imageIds as imageId}
+      <img
+        class="snap-center h-[130px] md:h-[260px] rounded-container-token object-contain"
+        src={imageId}
+        alt={imageId}
+        loading="lazy"
+      />
+    {/each}
   </div>
-</div>
+  <!-- Button: Right -->
+  <button
+    type="button"
+    class="btn-icon variant-filled opacity-50"
+    on:click={carouselRight}
+  >
+    <i class="fa-solid fa-chevron-right" />
+  </button>
