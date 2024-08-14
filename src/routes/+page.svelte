@@ -1,9 +1,9 @@
-<div id='80%-width' class="mx-auto w-4/5">
+<div id='80%-width' class="mx-auto w-4/5 card p-4">
   <h2 class="h2 text-center mb-8">
     Board Certified Physicians Treating Injuries from Car Accidents in the Fort
     Worth Area
   </h2>
-  <div class="space-y-4 mx-auto">
+  <div class=" space-y-4 mx-auto">
     <p>
       We are a network of board-certified physicians and surgeons (MD and DO),
       doctors of dental surgery (DDS), imaging centers, pharmacies, surgery

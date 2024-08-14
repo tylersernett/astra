@@ -22,7 +22,7 @@
 <h1 class="h1">Contact</h1>
 
 <div class="flex flex-col md:flex-row md:space-x-4">
-  <div id="form holder" class="pb-8">
+  <div id="form holder" class="pb-8 card p-4">
     <h2 class="h3 font-bold">Message Us</h2>
     <p class="py-4">
       Request to meet with an Astra physician by sending a message below or call
@@ -132,8 +132,7 @@
 
   <!-- TEXT INFO -->
   <div id="text holder" class="basis-full md:basis-1/3 space-y-4">
-    <hr />
-
+    <div class='pt-4'><hr /></div>
     <p class="font-bold h5">Two Locations:</p>
     <div class="space-y-2">
       <p>
