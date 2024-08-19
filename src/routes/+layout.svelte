@@ -1,56 +1,63 @@
 <script lang="ts">
   import "../app.css";
-  import { AppShell, AppBar, type DrawerSettings } from "@skeletonlabs/skeleton";
-  import { initializeStores, Drawer, getDrawerStore, } from '@skeletonlabs/skeleton';
+  import {
+    AppShell,
+    AppBar,
+    type DrawerSettings,
+  } from "@skeletonlabs/skeleton";
+  import {
+    initializeStores,
+    Drawer,
+    getDrawerStore,
+  } from "@skeletonlabs/skeleton";
   import CarouselCombo from "../lib/components/CarouselCombo.svelte";
-  
+
   initializeStores();
 
-const drawerStore = getDrawerStore();
-const drawerSettings: DrawerSettings = {
-	// Provide your property overrides:
-  position: 'right',
-	bgDrawer: 'bg-surface-50 ',
-	bgBackdrop: 'bg-gradient-to-tr from-primary-500/50 via-secondary-500/50 to-surface-500/50',
-	width: 'w-[280px] md:w-[480px]',
-	padding: 'p-4',
-	rounded: 'rounded-xl',
-};
-function drawerOpen(): void {
-	drawerStore.open(drawerSettings);
-}
-function drawerClose(): void {
-	drawerStore.close();
-}
+  const drawerStore = getDrawerStore();
+  const drawerSettings: DrawerSettings = {
+    // Provide your property overrides:
+    position: "right",
+    bgDrawer: "bg-surface-50 ",
+    bgBackdrop:
+      "bg-gradient-to-tr from-primary-500/50 via-secondary-500/50 to-surface-500/50",
+    width: "w-[280px] md:w-[480px]",
+    padding: "p-4",
+    rounded: "rounded-xl",
+  };
+  function drawerOpen(): void {
+    drawerStore.open(drawerSettings);
+  }
+  function drawerClose(): void {
+    drawerStore.close();
+  }
 
   // $: classesActive = (href: string) => (href === $page.url.pathname ? '!variant-filled-primary' : '');
 </script>
 
 <!-- MOBILE MENU -->
 <Drawer>
-  <nav class='list-nav md:flex'>
-    <ul
-      class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0"
-    >
+  <nav class="list-nav md:flex">
+    <ul class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
       <li class="hidden md:block"></li>
       <!-- dummy item because 1st list item formats weird -->
       <li>
-        <a href="/" on:click={() => (drawerClose())}>
+        <a href="/" on:click={() => drawerClose()}>
           <span class="flex-auto uppercase">Home</span>
         </a>
       </li>
       <li>
-        <a href="/about" on:click={() => (drawerClose())}>
+        <a href="/about" on:click={() => drawerClose()}>
           <span class="flex-auto uppercase">About</span>
         </a>
       </li>
       <li>
-        <a href="/contact" on:click={() => (drawerClose())}>
+        <a href="/contact" on:click={() => drawerClose()}>
           <span class="flex-auto uppercase">Contact</span>
         </a>
       </li>
       <li>
-        <a href="/FAQ" on:click={() => (drawerClose())}>
+        <a href="/FAQ" on:click={() => drawerClose()}>
           <span class="flex-auto uppercase">FAQ</span>
         </a>
       </li>
@@ -58,19 +65,29 @@ function drawerClose(): void {
   </nav>
 </Drawer>
 
-<AppShell>
+<AppShell background='bg-gradient-to-bl from-primary-500/5 via-secondary-500/5 to-surface-500/5'>
   <svelte:fragment slot="header">
     <AppBar
       gridcolumns="grid-cols-3"
       slotdefault="place-self-center"
       slottrail="place-content-end"
+      background="bg-gradient-to-bl from-primary-500/60 via-secondary-500/30 to-surface-500/5"
+      
     >
-      <svelte:fragment slot="lead"
-        ><i class="fa-solid fa-star-of-life" /></svelte:fragment
-      >
-      <h1 class="font-bold">
-        <a href="/">Astra Injury Rehabilitation Specialists</a>
-      </h1>
+      <svelte:fragment slot="lead">
+        <!-- <img src='images/ASTRA_WHITE_VECTOR.svg' alt='Astra logo'/> -->
+        <h1 class="font-bold">
+          <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[300px]'/>
+
+          <span class=" ">
+            <!-- <img src='images/ASTRA_LOGO.svg' alt='Astra logo' class='w-[200px]'/> -->
+          <!-- <img src='images/ASTRA_TEXT.svg' alt='Astra logo' class='w-[300px]'/> -->
+        </span>
+  
+          <!-- <a href="/">Astra Injury Rehabilitation Specialists</a> -->
+        </h1>
+      </svelte:fragment>
+
 
       <svelte:fragment slot="trail">
         <!-- Hamburger Button for Small Screens -->
@@ -115,14 +132,12 @@ function drawerClose(): void {
     </AppBar>
   </svelte:fragment>
 
-  
-
   <!-- (sidebarLeft) -->
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
   <CarouselCombo />
-  <div class="container mx-auto p-4 space-y-8 pb-16">
+  <div class="container mx-auto p-4 space-y-8  ">
     <slot></slot>
   </div>
   <!-- ---- / ---- -->
@@ -159,4 +174,3 @@ function drawerClose(): void {
     </div>
   </svelte:fragment>
 </AppShell>
-
