@@ -57,18 +57,18 @@ let topDiv: HTMLDivElement;
 import { page } from '$app/stores'; // Import the page store to access the current URL
 
 
-beforeNavigate((navigation) => {
-  return new Promise((resolve) => {
-    const transition = document.startViewTransition(async () => {
-      if (contentDiv) {
-        // Fix scroll
-        contentDiv.scrollTop = 0;
-      }
-      // resolve();
-      await navigation.complete;
-    });
-  });
-});
+// beforeNavigate((navigation) => {
+//   return new Promise((resolve) => {
+//     const transition = document.startViewTransition(async () => {
+//       if (contentDiv) {
+//         // Fix scroll
+//         contentDiv.scrollTop = 0;
+//       }
+//       // resolve();
+//       await navigation.complete;
+//     });
+//   });
+// });
 
 afterNavigate(()=> {
   if ($page.url.pathname === '/') {
@@ -187,7 +187,7 @@ afterNavigate(()=> {
   <!-- Router Slot -->
    <div bind:this={topDiv}></div>
   <CarouselCombo />
-  <div class="container mx-auto px-2 md:p-4 space-y-8  " bind:this={contentDiv}>
+  <div class="container mx-auto px-2 md:p-4 space-y-8  scrollTo" bind:this={contentDiv}>
     <slot></slot>
   </div>
   <!-- ---- / ---- -->
