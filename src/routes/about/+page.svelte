@@ -14,11 +14,11 @@
 </div>
 
 <!-- <Box display={'flex'} gap={'1em'} className='contact-flex'> -->
-<div class="card p-4 max-w-[990px] mx-auto">
+<div class="card shadow-lg py-4 md:p-8 max-w-[990px] mx-auto">
   <!-- style={{ flex: '1 1 50%', }} -->
-  <div class="flex space-x-4 md:flex-row flex-col">
+  <div class="flex p-3 md:p-0 md:space-x-6 md:flex-row flex-col">
     <!-- style={{ flex: '1 1 50%', }} -->
-    <div id="bio-images" class="flex-col basis-5/6 max-w-[260px] min-w-[260px] mx-auto">
+    <div id="bio-images" class="flex-col basis-5/6 max-w-[260px] min-w-[260px] mx-auto pb-4">
       <img
         src="images/riley-portrait-square.png"
         alt="A portrait of Dr. Johnson smiling while wearing a navy blue suit in front of the Ft. Worth skyline"
@@ -88,9 +88,9 @@
 <!-- </Box> -->
 
 <hr />
-<div class="space-x-4">
+<div class="space-x-4 max-w-[990px] mx-auto">
   <h2 class="h2">Specialities</h2>
-  <ul class="list-disc space-y-2 columns-1 md:columns-2 p-4">
+  <ul class="list-disc space-y-2 columns-1 md:columns-2 pt-4 px-8 pb-8">
     <li>Pain Medicine</li>
     <li>Sports Medicine</li>
     <li>Orthopedic Surgery</li>

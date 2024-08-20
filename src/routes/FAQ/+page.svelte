@@ -1,6 +1,5 @@
-
-
-<h1 class='h1'>Frequently Asked Questions</h1>
+<h1 class='h1 text-center' >Frequently Asked Questions</h1>
+<div class='space-y-8 max-w-[990px] mx-auto px-3'>
 <h3 ><span class="s2"><b>HOW DO I GET CARE IF I'VE BEEN INJURED AND I HAVE NO INSURANCE?</b></span><span class="s1"><br>
 </span><span class="s2">If you have been injured in an motor vehicle accident through no fault of your own and you do not have insurance, or you cannot afford your deductibles or copays, you may be able to receive medical treatment through a medical lien or your own auto insurance. <b>It is important for you to see a doctor as soon as possible, even if you do not have an attorney.</b> You want to be sure you will have access to a wide range of treatment options and board certified medical specialists. The scope of treatment options and quality of care available to you is directly dependent on the relationships established between the attorney that handles your case and the medical professionals providing your care. </span></h3>
 <h3 ><span class="s2"><b>I CAN'T FIND A PHYSICIAN IN THE FORT WORTH AREA THAT WILL SEE MOTOR VEHICLE ACCIDENTS, EVEN WITH INSURANCE</b></span><span class="s1"><br>
@@ -18,3 +17,6 @@
 </span><span class="s2">Fortunately, 80-90% of musculoskeletal injuries do not require surgery. Our independent physicians have a wide variety of treatments to get you better without surgery if at all possible. If these treatments fail, or if you have a problem that is only correctible by surgery, you will be referred to one of our network surgeons. Your primary treating doctor will review the case with the respective surgeon before you go to assure you are seeing the right surgeon for the right problem at the right time. </span></h3>
 <h3 ><span class="s2"><b>I LIVE OUT OF TOWN. DO YOU SEE PATIENTS OUT OF TOWN?</b></span><span class="s1"><br>
 </span><span class="s2">If you reside out of the Fort Worth area and do not have access to the types of services provided by Physician Injury Consultants, we may be able to help. It is possible travel and lodging can be arranged to allow you to have the treatment you need. We treat many patients from out of town and even some from out of state.<b><i>&nbsp;Email us today</i></b> for more information and to review your specific situation.</span></h3>
+</div>
+<div id='spacer' class =''>
+</div>

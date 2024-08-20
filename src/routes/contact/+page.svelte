@@ -19,14 +19,15 @@
   }
 </script>
 
-<h1 class="h1">Contact</h1>
+<h1 class="h1 text-center">Contact</h1>
 
-<div class="flex flex-col md:flex-row md:space-x-4">
-  <div id="form holder" class="pb-8 card p-4">
-    <h2 class="h3 font-bold">Message Us</h2>
-    <p class="py-4">
+<div class="flex flex-col md:flex-row md:space-x-8">
+  <div id="form holder" class="pb-8 card shadow-md md:card-hover p-8">
+    <h2 class="h3 font-bold text-center">Message Us</h2>
+    <p class="py-4 text-center">
       Request to meet with an Astra physician by sending a message below or call
-      us at 817-897-5190 for new patient appointments and/or any questions.
+      us at <a href="tel:817-897-5190">817-897-5190</a> for new patient appointments
+      and/or any questions.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
       <!-- First Name and Last Name Row (2 columns on medium+ screens) -->
@@ -92,7 +93,7 @@
       <!-- Preferred Method of Contact (Radio Buttons) -->
       <div class="flex items-center space-x-4">
         <label for="preferredContact" class="mb-0"
-          >Preferred Method of Contact:</label
+          >Preferred Contact Method:</label
         >
         <div class="flex space-x-4">
           <label class="inline-flex items-center">
@@ -132,7 +133,7 @@
 
   <!-- TEXT INFO -->
   <div id="text holder" class="basis-full md:basis-1/3 space-y-4">
-    <div class='pt-4'><hr /></div>
+    <div class="pt-4"><hr /></div>
     <p class="font-bold h5">Two Locations:</p>
     <div class="space-y-2">
       <p>
@@ -160,11 +161,11 @@
 </div>
 
 <!-- MAP -->
-<div class='mx-auto w-4/5'>
+<div class="mx-auto w-4/5 pb-8">
   <iframe
     title="Map of Astra locations"
     src="https://www.google.com/maps/d/embed?mid=1Vc4vdMJallukcKH66W59kbvEab4&ehbc=2E312F"
-    class='w-full'
-    height='480'
+    class="w-full"
+    height="480"
   ></iframe>
 </div>

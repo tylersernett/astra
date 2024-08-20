@@ -1,10 +1,10 @@
-<div class="max-w-[990px] p-8 mx-auto">
-  <div id="80%-width" class=" card shadow-xl p-4 md:p-8 my-8">
+<div class="max-w-[990px] pb-8 mx-auto">
+  <div id="80%-width" class=" card shadow-xl p-3 md:p-8 my-8">
     <h2 class="h2 text-center mb-8">
       Board Certified Physicians Treating Injuries from Car Accidents in the
       Fort Worth Area
     </h2>
-    <div class=" space-y-4 mx-auto">
+    <div class=" space-y-4 ">
       <p>
         We are a network of board-certified physicians and surgeons (MD and DO),
         doctors of dental surgery (DDS), imaging centers, pharmacies, surgery
@@ -28,7 +28,7 @@
       </p>
     </div>
   </div>
-  <div id="call-to-action" class="p-4 text-2xl text-center">
+  <div id="call-to-action" class="p-3 text-2xl text-center">
     <p>
       Call our appointment line at
       <a href="tel:817-897-5190" class="anchor font-bold"> 817-897-5190 </a>
