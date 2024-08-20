@@ -11,3 +11,7 @@ html, body { @apply h-full overflow-hidden; }
 #blurred-bg {
   backdrop-filter: blur(3px);
 }
+
+/* .scrollTo {
+  scroll-margin-top: 40px;
+} */
