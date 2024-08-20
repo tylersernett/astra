@@ -33,8 +33,57 @@
   }
 
   // $: classesActive = (href: string) => (href === $page.url.pathname ? '!variant-filled-primary' : '');
-</script>
+    // Fix SvelteKit scrolling issue
+//     import { browser } from "$app/environment";
+//     import { afterNavigate, beforeNavigate } from "$app/navigation";
 
+// beforeNavigate(async (nav) => {
+//   if (!browser) return;
+//   document.getElementsByTagName("html")[0].classList.add("pageSwitch");
+// })
+// afterNavigate(async (nav) => {
+//   if (!browser) return;
+//   await tick();
+//   document.getElementsByTagName("html")[0].classList.remove("pageSwitch");
+// });
+
+
+///////////////////  NAV FIX \\\\\\\\\\\
+
+import { afterNavigate, onNavigate } from "$app/navigation";
+
+let contentDiv: HTMLDivElement;
+let topDiv: HTMLDivElement;
+import { page } from '$app/stores'; // Import the page store to access the current URL
+
+
+// onNavigate((navigation) => {
+//   return new Promise((resolve) => {
+//     const transition = document.startViewTransition(async () => {
+//       if (contentDiv) {
+//         // Fix scroll
+//         contentDiv.scrollTop = 0;
+//       }
+//       resolve();
+//       await navigation.complete;
+//     });
+//   });
+// });
+
+afterNavigate(()=> {
+  if ($page.url.pathname === '/') {
+    topDiv.scrollIntoView({behavior: 'smooth'})
+  } else {
+    contentDiv.scrollIntoView({behavior: 'smooth'})
+  }
+})
+
+</script>
+<style>
+  :global(html.pageSwitch) {
+    scroll-behavior: smooth;
+  }
+</style>
 <!-- MOBILE MENU -->
 <Drawer>
   <nav class="list-nav md:flex">
@@ -65,9 +114,9 @@
   </nav>
 </Drawer>
 
-<AppShell background='bg-gradient-to-bl from-primary-500/5 via-secondary-500/5 to-surface-500/5'>
-  <svelte:fragment slot="header">
-    <AppBar
+<AppShell background='bg-gradient-to-bl from-primary-500/5 via-secondary-500/5 to-surface-500/5' >
+  <svelte:fragment slot="header" >
+    <AppBar 
       gridcolumns="grid-cols-3"
       slotdefault="place-self-center"
       slottrail="place-content-end"
@@ -76,7 +125,7 @@
     >
       <svelte:fragment slot="lead">
         <!-- <img src='images/ASTRA_WHITE_VECTOR.svg' alt='Astra logo'/> -->
-        <h1 class="font-bold">
+        <h1 class="font-bold" >
           <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[300px]'/>
 
           <span class=" ">
@@ -136,8 +185,9 @@
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
+   <div bind:this={topDiv}></div>
   <CarouselCombo />
-  <div class="container mx-auto p-4 space-y-8  ">
+  <div class="container mx-auto px-2 md:p-4 space-y-8  " bind:this={contentDiv}>
     <slot></slot>
   </div>
   <!-- ---- / ---- -->
