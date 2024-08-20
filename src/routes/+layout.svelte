@@ -50,25 +50,25 @@
 
 ///////////////////  NAV FIX \\\\\\\\\\\
 
-import { afterNavigate, onNavigate } from "$app/navigation";
+import { afterNavigate, beforeNavigate } from "$app/navigation";
 
 let contentDiv: HTMLDivElement;
 let topDiv: HTMLDivElement;
 import { page } from '$app/stores'; // Import the page store to access the current URL
 
 
-// onNavigate((navigation) => {
-//   return new Promise((resolve) => {
-//     const transition = document.startViewTransition(async () => {
-//       if (contentDiv) {
-//         // Fix scroll
-//         contentDiv.scrollTop = 0;
-//       }
-//       resolve();
-//       await navigation.complete;
-//     });
-//   });
-// });
+beforeNavigate((navigation) => {
+  return new Promise((resolve) => {
+    const transition = document.startViewTransition(async () => {
+      if (contentDiv) {
+        // Fix scroll
+        contentDiv.scrollTop = 0;
+      }
+      // resolve();
+      await navigation.complete;
+    });
+  });
+});
 
 afterNavigate(()=> {
   if ($page.url.pathname === '/') {
