@@ -78,11 +78,16 @@ afterNavigate(()=> {
   }
 })
 
+ // Function to check if a link is active
+ $: currentPath = $page.url.pathname;
+ $: isActive = (href: string) => currentPath === href ? 'underline underline-offset-2' : '';
+
 </script>
 <style>
   :global(html.pageSwitch) {
     scroll-behavior: smooth;
   }
+
 </style>
 <!-- MOBILE MENU -->
 <Drawer>
@@ -91,22 +96,22 @@ afterNavigate(()=> {
       <li class="hidden md:block"></li>
       <!-- dummy item because 1st list item formats weird -->
       <li>
-        <a href="/" on:click={() => drawerClose()}>
+        <a href="/" on:click={() => drawerClose()} class={isActive('/')}>
           <span class="flex-auto uppercase">Home</span>
         </a>
       </li>
       <li>
-        <a href="/about" on:click={() => drawerClose()}>
+        <a href="/about" on:click={() => drawerClose()} class={isActive('/about')}>
           <span class="flex-auto uppercase">About</span>
         </a>
       </li>
       <li>
-        <a href="/contact" on:click={() => drawerClose()}>
+        <a href="/contact" on:click={() => drawerClose()} class={isActive('/contact')}>
           <span class="flex-auto uppercase">Contact</span>
         </a>
       </li>
       <li>
-        <a href="/FAQ" on:click={() => drawerClose()}>
+        <a href="/FAQ" on:click={() => drawerClose()} class={isActive('/FAQ')}>
           <span class="flex-auto uppercase">FAQ</span>
         </a>
       </li>
@@ -156,22 +161,22 @@ afterNavigate(()=> {
             <li></li>
             <!-- dummy item because 1st list item formats weird -->
             <li>
-              <a href="/">
+              <a href="/" class={isActive('/')}>
                 <span class="flex-auto uppercase">Home</span>
               </a>
             </li>
             <li>
-              <a href="/about">
+              <a href="/about" class={isActive('/about')}>
                 <span class="flex-auto uppercase">About</span>
               </a>
             </li>
             <li>
-              <a href="/contact">
+              <a href="/contact" class={isActive('/contact')}>
                 <span class="flex-auto uppercase">Contact</span>
               </a>
             </li>
             <li>
-              <a href="/FAQ">
+              <a href="/FAQ" class={isActive('/FAQ')}>
                 <span class="flex-auto uppercase">FAQ</span>
               </a>
             </li>
