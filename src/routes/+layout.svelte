@@ -138,7 +138,7 @@ afterNavigate(()=> {
           <!-- <img src='images/ASTRA_TEXT.svg' alt='Astra logo' class='w-[300px]'/> -->
         </span>
   
-          <!-- <a href="/">Astra Injury Rehabilitation Specialists</a> -->
+          <!-- <a href="/">Astra Injury Rehabilitation Consultants</a> -->
         </h1>
       </svelte:fragment>
 
@@ -203,7 +203,7 @@ afterNavigate(()=> {
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
         >
-          <span class="font-bold">Astra Injury Rehabilitation Specialists</span>
+          <span class="font-bold">Astra Injury Rehabilitation Consultants</span>
           <span
             ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6"
               >209 Saint Louis Ave, Fort Worth, TX 76104</a
@@ -219,7 +219,7 @@ afterNavigate(()=> {
 
         <div class="text-center py-8 pb-8">
           <h6 class="h6 text-sm">
-            Copyright © 2024 Astra Injury Rehabilitation Specialists
+            Copyright © 2024 Astra Injury Rehabilitation Consultants
             <br />
             Design:
             <a href="https://www.github.com/tylersernett">Tyler Johnson</a>
