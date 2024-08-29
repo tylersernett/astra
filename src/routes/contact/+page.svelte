@@ -25,9 +25,7 @@
   <div id="form holder" class="pb-8 card shadow-md md:card-hover p-8">
     <h2 class="h3 font-bold text-center">Message Us</h2>
     <p class="py-4 text-center">
-      Request to meet with an Astra physician by sending a message below or call
-      us at <a href="tel:817-897-5190">817-897-5190</a> for new patient appointments
-      and/or any questions.
+      To schedule an appointment with an Astra physician or to ask any questions, please send us a message below or call us at <a href="tel:817-897-5190">817-897-5190</a>.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
       <!-- First Name and Last Name Row (2 columns on medium+ screens) -->

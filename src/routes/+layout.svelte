@@ -78,11 +78,16 @@ afterNavigate(()=> {
   }
 })
 
+ // Function to check if a link is active
+ $: currentPath = $page.url.pathname;
+ $: isActive = (href: string) => currentPath === href ? 'underline underline-offset-2' : '';
+
 </script>
 <style>
   :global(html.pageSwitch) {
     scroll-behavior: smooth;
   }
+
 </style>
 <!-- MOBILE MENU -->
 <Drawer>
@@ -91,22 +96,22 @@ afterNavigate(()=> {
       <li class="hidden md:block"></li>
       <!-- dummy item because 1st list item formats weird -->
       <li>
-        <a href="/" on:click={() => drawerClose()}>
+        <a href="/" on:click={() => drawerClose()} class={isActive('/')}>
           <span class="flex-auto uppercase">Home</span>
         </a>
       </li>
       <li>
-        <a href="/about" on:click={() => drawerClose()}>
+        <a href="/about" on:click={() => drawerClose()} class={isActive('/about')}>
           <span class="flex-auto uppercase">About</span>
         </a>
       </li>
       <li>
-        <a href="/contact" on:click={() => drawerClose()}>
+        <a href="/contact" on:click={() => drawerClose()} class={isActive('/contact')}>
           <span class="flex-auto uppercase">Contact</span>
         </a>
       </li>
       <li>
-        <a href="/FAQ" on:click={() => drawerClose()}>
+        <a href="/FAQ" on:click={() => drawerClose()} class={isActive('/FAQ')}>
           <span class="flex-auto uppercase">FAQ</span>
         </a>
       </li>
@@ -121,19 +126,21 @@ afterNavigate(()=> {
       slotdefault="place-self-center"
       slottrail="place-content-end"
       background="bg-gradient-to-bl from-primary-500/60 via-secondary-500/30 to-surface-500/5"
-      
+      shadow='shadow-sm'
     >
       <svelte:fragment slot="lead">
         <!-- <img src='images/ASTRA_WHITE_VECTOR.svg' alt='Astra logo'/> -->
         <h1 class="font-bold" >
-          <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[300px]'/>
+          <a href='/'>
+            <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[240px] md:w-[300px]'/>
+          </a>
 
           <span class=" ">
             <!-- <img src='images/ASTRA_LOGO.svg' alt='Astra logo' class='w-[200px]'/> -->
           <!-- <img src='images/ASTRA_TEXT.svg' alt='Astra logo' class='w-[300px]'/> -->
         </span>
   
-          <!-- <a href="/">Astra Injury Rehabilitation Specialists</a> -->
+          <!-- <a href="/">Astra Injury Rehabilitation Consultants</a> -->
         </h1>
       </svelte:fragment>
 
@@ -156,22 +163,22 @@ afterNavigate(()=> {
             <li></li>
             <!-- dummy item because 1st list item formats weird -->
             <li>
-              <a href="/">
+              <a href="/" class={isActive('/')}>
                 <span class="flex-auto uppercase">Home</span>
               </a>
             </li>
             <li>
-              <a href="/about">
+              <a href="/about" class={isActive('/about')}>
                 <span class="flex-auto uppercase">About</span>
               </a>
             </li>
             <li>
-              <a href="/contact">
+              <a href="/contact" class={isActive('/contact')}>
                 <span class="flex-auto uppercase">Contact</span>
               </a>
             </li>
             <li>
-              <a href="/FAQ">
+              <a href="/FAQ" class={isActive('/FAQ')}>
                 <span class="flex-auto uppercase">FAQ</span>
               </a>
             </li>
@@ -193,12 +200,12 @@ afterNavigate(()=> {
   <!-- ---- / ---- -->
   <!-- (pageFooter) -->
   <svelte:fragment slot="pageFooter">
-    <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100">
+    <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100 px-4">
       <div class="container mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
         >
-          <span class="font-bold">Astra Injury Rehabilitation Specialists</span>
+          <span class="font-bold">Astra Injury Rehabilitation Consultants</span>
           <span
             ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6"
               >209 Saint Louis Ave, Fort Worth, TX 76104</a
@@ -214,7 +221,7 @@ afterNavigate(()=> {
 
         <div class="text-center py-8 pb-8">
           <h6 class="h6 text-sm">
-            Copyright © 2024 Astra Injury Rehabilitation Specialists
+            Copyright © 2024 Astra Injury Rehabilitation Consultants
             <br />
             Design:
             <a href="https://www.github.com/tylersernett">Tyler Johnson</a>

@@ -1,30 +1,34 @@
 <div class="max-w-[990px] pb-8 mx-auto">
   <div id="80%-width" class=" card shadow-xl p-3 md:p-8 my-8">
     <h2 class="h2 text-center mb-8">
-      Board Certified Physicians Treating Injuries from Car Accidents in the
+      Board-Certified Physicians Treating Injuries from Car Accidents in the
       Fort Worth Area
     </h2>
     <div class=" space-y-4 ">
       <p>
-        We are a network of board-certified physicians and surgeons (MD and DO),
-        doctors of dental surgery (DDS), imaging centers, pharmacies, surgery
-        centers, and hospitals providing medical care to personal injury
-        patients in Fort Worth, Texas and the surrounding areas. Physician
-        injury consultants doctors provide care to patients injured in car
-        accidents through a medical lien or personal injury protection in the
-        Fort Worth area.
+        Astra Injury Rehabilitation Consultants 
+        is a comprehensive network of board-certified physicians, 
+        surgeons (MD and DO), dental surgeons (DDS), imaging centers, 
+        pharmacies, surgery centers, and hospitals, dedicated to 
+        providing medical care for personal injury patients in 
+        Fort Worth, Texas, and the surrounding areas. We specialize 
+        in treating patients injured in car accidents through medical liens 
+        and personal injury protection (PIP), ensuring you receive 
+        the necessary care without the immediate burden of medical costs.
       </p>
       <p>
-        It is important your injuries are diagnosed and treated as quickly as
-        possible, even if you do not have an attorney. Call us first to see a
-        doctor and begin treatment.
+        If you've been injured in a car accident, it's crucial to get a 
+        timely diagnosis and start your treatment—even 
+        if you haven't yet retained an attorney. Contact us first to 
+        schedule an appointment with an experienced physician who can 
+        guide you through your recovery process.
       </p>
       <p>
-        If you have been treated in an emergency room due to a car accident and
-        cannot find a doctor to see you for follow-up care, we can probably
-        help. We can arrange an appointment with a board-certified physician
-        experienced in treating injuries from motor vehicle accidents and
-        quickly obtain your ER treatment records for your doctor.
+        If you've already received emergency room care following a car accident 
+        but are struggling to find follow-up care, we can help. We'll quickly connect 
+        you with a board-certified physician who specializes in treating auto collision 
+        injuries and we'll ensure that your ER treatment records are promptly available 
+        for your ongoing care.
       </p>
     </div>
   </div>

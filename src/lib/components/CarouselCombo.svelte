@@ -14,10 +14,10 @@
 
   let imageIds2 = [
     "images/xray-office.jpg",
-    "images/iv-hand.jpg",
-    "images/paper-output.jpg",
+    "images/doctor-chart.jpg",
     "images/mri-point.jpg",
     "images/skull-scan.jpg",
+    "images/riley-machine-blue.png",
   ];
 
   function carouselLeft(): void {
