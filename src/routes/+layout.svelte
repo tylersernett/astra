@@ -126,12 +126,14 @@ afterNavigate(()=> {
       slotdefault="place-self-center"
       slottrail="place-content-end"
       background="bg-gradient-to-bl from-primary-500/60 via-secondary-500/30 to-surface-500/5"
-      
+      shadow='shadow-sm'
     >
       <svelte:fragment slot="lead">
         <!-- <img src='images/ASTRA_WHITE_VECTOR.svg' alt='Astra logo'/> -->
         <h1 class="font-bold" >
-          <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[300px]'/>
+          <a href='/'>
+            <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[240px] md:w-[300px]'/>
+          </a>
 
           <span class=" ">
             <!-- <img src='images/ASTRA_LOGO.svg' alt='Astra logo' class='w-[200px]'/> -->
@@ -198,7 +200,7 @@ afterNavigate(()=> {
   <!-- ---- / ---- -->
   <!-- (pageFooter) -->
   <svelte:fragment slot="pageFooter">
-    <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100">
+    <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100 px-4">
       <div class="container mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
