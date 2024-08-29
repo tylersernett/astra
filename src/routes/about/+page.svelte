@@ -4,11 +4,12 @@
 
 <div class='flex flex-col md:flex-row max-w-[800px] mx-auto'>
   <div class="text-center ">
-    <h2 class="h2">Board Certified Accident Doctors</h2>
+    <h2 class="h2">Board-Certified Accident Doctors</h2>
     <p class="pt-4">
-      We are a network of independent medical service providers working together
-      to provide care to patients injured from car accidents and other personal
-      injuries covered under a medical lien or personal injury protection.
+      We are a collaborative network of independent medical service providers 
+      committed to delivering comprehensive care to patients injured in car 
+      accidents and other physical trauma, with costs covered 
+      through medical liens or personal injury protection.
     </p>
   </div>
 </div>
@@ -44,7 +45,7 @@
       <!-- style={{ textAlign: 'left' }} -->
       <h3 class="h3 font-bold">Riley M. Johnson, DO</h3>
       <p>
-        Riley Johnson, DO, is a board certified, fellowship-trained
+        Riley Johnson, DO, is a board-certified, fellowship-trained
         interventional pain management physician.
       </p>
       <p>
