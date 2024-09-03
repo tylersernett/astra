@@ -22,10 +22,10 @@
 <h1 class="h1 text-center">Contact</h1>
 
 <div class="flex flex-col md:flex-row md:space-x-8">
-  <div id="form holder" class="pb-8 card shadow-md md:card-hover p-8">
+  <div id="form holder" class="pb-8 card shadow-md p-8">
     <h2 class="h3 font-bold text-center">Message Us</h2>
     <p class="py-4 text-center">
-      To schedule an appointment with an Astra physician or to ask any questions, please send us a message below or call us at <a href="tel:817-897-5190">817-897-5190</a>.
+      To schedule an appointment with an Astra physician or to ask any questions, please send us a message below or call us at <a href="tel:817-xxx-xxxx">817-xxx-xxxx</a>.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
       <!-- First Name and Last Name Row (2 columns on medium+ screens) -->
@@ -141,9 +141,9 @@
         >
       </p>
       <p>
-        <span class="font-bold">Southwest FW </span><br /><a
+        <span class="font-bold">Southwest Fort Worth </span><br /><a
           href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9"
-          class="anchor">7148 Trail Lake Dr, Ft. Worth, TX 76123</a
+          class="anchor">7148 Trail Lake Dr, Fort Worth, TX 76123</a
         >
       </p>
     </div>
@@ -152,7 +152,7 @@
       <p>Kevin Deosarran</p>
       <p>
         New Patient Scheduling Number: <br />
-        <a href="tel:817-897-5190" class="anchor">817-897-5190</a>
+        <a href="tel:817-xxx-xxxx" class="anchor">817-xxx-xxxx</a>
       </p>
     </div>
   </div>

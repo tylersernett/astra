@@ -4,7 +4,7 @@
 
 <div class='flex flex-col md:flex-row max-w-[800px] mx-auto'>
   <div class="text-center ">
-    <h2 class="h2">Board-Certified Accident Doctors</h2>
+    <h2 class="h2">Board-Certified Physicians</h2>
     <p class="pt-4">
       We are a collaborative network of independent medical service providers 
       committed to delivering comprehensive care to patients injured in car 
@@ -96,23 +96,41 @@
     <li>Sports Medicine</li>
     <li>Orthopedic Surgery</li>
     <li>Spine Surgery</li>
-    <li>General Surgery</li>
-    <li>ENT/Facial Surgery</li>
-    <li>Plastic and Reconstructive Surgery</li>
+    <!-- <li>General Surgery</li> -->
+    <li>ENT Surgery</li>
+    <!-- <li>Plastic and Reconstructive Surgery</li> -->
     <li>PM&R Neurodiagnostics</li>
     <li>Doctor of Dental Surgery (DDS)</li>
-    <li>Pharmacy</li>
+    <!-- <li>Pharmacy</li> -->
     <li>Physical Therapy</li>
     <li>DBC Spine Rehabilitation</li>
+    <li>Work Conditioning and Return To Work Program</li>
     <li>Accredited Pain Procedure Center</li>
     <li>
       Accredited Imaging Centers (MRI, MR Arthrogram, CT, CT Arthrogram, X-ray,
       Ultrasound)
     </li>
-    <li>Accredited Hospital and Outpatient Surgical Center</li>
-    <li>Neuropsychology</li>
+    <!-- <li>Accredited Hospital and Outpatient Surgical Center</li> -->
+    <!-- <li>Neuropsychology</li> -->
     <li>Neuro-Optometry</li>
     <li>Traumatic Brain Injury Rehabilitation</li>
-    <li>Work Conditioning and Return To Work Program</li>
+  </ul>
+  <h2 class="h2">Procedures</h2>
+  <ul class="list-disc space-y-2 columns-1 md:columns-2 pt-4 px-8 pb-8">
+    <li>Regenerative Medicine Procedures (including BMAC, PRP)</li>
+    <li>Transforminal Epidural Steroid Injection</li>
+    <li>Interlaminar Epidural Steroid Injection</li>
+    <li>Peripheral Joint Injection</li>
+    <li>Facet Joint Injection</li>
+    <li>Trigger Point Injection</li>
+    <li>Stellate Ganglion Block</li>
+    <li>Sympathetic Block</li>
+    <li>Radiofrequency Ablation</li>
+    <li>Medial Branch Block</li>
+    <li>Sacral Lateral Branch Block</li>
+    <li>Peripheral Nerve Block</li>
+    <li>Basivertebral Nerve Ablation</li>
+    <li><a class='anchor' href='https://www.medtronic.com/us-en/patients/treatments-therapies/spinal-cord-stimulation-chronic-pain.html' style='text-decoration: underline;'>Spinal Cord Stimulation</a></li>
+    <li>Kyphoplasty</li>
   </ul>
 </div>

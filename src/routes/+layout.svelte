@@ -203,20 +203,22 @@ afterNavigate(()=> {
     <div class="w-screen mx-auto pt-8 space-y-2 bg-surface-100 px-4">
       <div class="container mx-auto">
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center text-sm"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center text-sm"
         >
           <span class="font-bold">Astra Injury Rehabilitation Consultants</span>
           <span
             ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6"
               >209 Saint Louis Ave, Fort Worth, TX 76104</a
+            ><br/><a href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9"
+              >7148 Trail Lake Dr, Fort Worth, TX 76123</a
             ></span
           >
-          <span><a href="tel:817-897-5190">817-897-5190</a></span>
-          <span
+          <span><a href="tel:817-xxx-xxxx">817-xxx-xxxx</a></span>
+          <!-- <span
             ><a href="mailto:kdeosarran@astra-consultants.com"
               >kdeosarran@astra-consultants.com</a
             ></span
-          >
+          > -->
         </div>
 
         <div class="text-center py-8 pb-8">
