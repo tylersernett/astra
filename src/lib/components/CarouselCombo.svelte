@@ -3,21 +3,24 @@
   import Carousel from "./Carousel.svelte";
 
   let elemCarousel: HTMLDivElement;
-  let imageIds1 = [
-    "images/emergency.jpg",
-    "images/ambulance.jpg",
-    "images/car-collision.jpg",
-    "images/stretcher.jpg",
-    "images/dallas-ambulance.jpg",
-    "images/eblanket.jpg",
-  ];
+  // let imageIds1 = [
+  //   "images/emergency.jpg",
+  //   "images/ambulance.jpg",
+  //   "images/car-collision.jpg",
+  //   "images/stretcher.jpg",
+  //   "images/dallas-ambulance.jpg",
+  //   "images/eblanket.jpg",
+  // ];
 
   let imageIds2 = [
     "images/xray-office.jpg",
+    "images/riley-op.png",
     "images/doctor-chart.jpg",
     "images/mri-point.jpg",
+    // "images/riley-machine-blue-3.png",
+    "images/riley-machine-blue-4.png",
+    // "images/riley-machine-blue.png",
     "images/skull-scan.jpg",
-    "images/riley-machine-blue.png",
   ];
 
   function carouselLeft(): void {
@@ -43,7 +46,7 @@
       if (elemCarousel) {
         carouselRight();
       }
-    }, 3000);
+    }, 3000000);
 
     return () => clearInterval(interval);
   });
@@ -51,7 +54,7 @@
 
 <!-- Carousel Container with Background Image -->
 <div
-  class="relative w-full h-[306px] md:h-[568px] bg-cover bg-center bg-fixed"
+  class="relative w-full md:h-[324px] bg-cover bg-center bg-fixed"
   style="background-image: url('/images/bg-mag.jpg');"
 >
 <!-- BLUR -->
@@ -61,13 +64,13 @@
   <!-- Gradient -->
   <div    class="absolute inset-0 opacity-60 bg-gradient-to-br variant-gradient-primary-secondary" ></div>
 
-  <div
+  <!-- <div
     class=" p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center relative z-10 bg-transparent"
   >
     <Carousel imageIds={imageIds1} />
-  </div>
+  </div> -->
   <div
-    class="pt-0 p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center relative z-10 bg-transparent"
+    class="p-4 md:p-8 grid grid-cols-[auto_1fr_auto] gap-4 items-center relative z-10 bg-transparent"
   >
     <Carousel imageIds={imageIds2} />
   </div>
