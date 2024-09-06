@@ -3,6 +3,7 @@
 
   let elemCarousel: HTMLDivElement;
   export let imageIds: string[] = [];
+  let timeoutId: ReturnType<typeof setTimeout>;
 
   function carouselLeft(): void {
     const x =
@@ -21,29 +22,43 @@
     elemCarousel.scroll(x, 0);
   }
 
-  onMount(() => {
-  let timeoutId: number; // Declare a variable to store the timeout ID
-
   function autoAdvanceCarousel() {
-    if (elemCarousel) {
-      carouselRight();
-    }
-
-    // Set a random timeout between 3 and 4 seconds (3000 to 4000 ms)
     const randomTimeout = Math.random() * 1000 + 3000;
-    timeoutId = setTimeout(autoAdvanceCarousel, randomTimeout) as unknown as number;
+    timeoutId = setTimeout(() => {
+      carouselRight();
+      autoAdvanceCarousel();
+    }, randomTimeout);
   }
 
-  // Start the auto-advance
-  autoAdvanceCarousel();
+  function pauseAutoAdvance() {
+    if (timeoutId) clearTimeout(timeoutId); // Stop the auto-advance on hover
+  }
 
-  return () => clearTimeout(timeoutId); // Use the timeout ID to clear the timeout
+  function resumeAutoAdvance() {
+    autoAdvanceCarousel(); // Restart auto-advance on mouse leave
+  }
+
+  onMount(() => {
+    autoAdvanceCarousel(); // Start the auto-advance
+    return () => clearTimeout(timeoutId); // Use the timeout ID to clear the timeout
   });
+
 </script>
 
 <!-- CAROUSEL -->
+ <div
+  class='flex  items-center'
+  role="group" 
+  aria-label="Image carousel" 
+  on:mouseenter={pauseAutoAdvance}  
+  on:mouseleave={resumeAutoAdvance} 
+ >
   <!-- Button: Left -->
-  <button type="button" class="btn-icon variant-filled opacity-50" on:click={carouselLeft}>
+  <button 
+    type="button" 
+    class="btn-icon variant-filled opacity-50  absolute left-1 z-10" 
+    on:click={carouselLeft}
+  >
     <i class="fa-solid fa-chevron-left" />
   </button>
   <!-- Full Images -->
@@ -63,8 +78,9 @@
   <!-- Button: Right -->
   <button
     type="button"
-    class="btn-icon variant-filled opacity-50"
+    class="btn-icon variant-filled opacity-50  absolute right-1 z-10 "
     on:click={carouselRight}
   >
     <i class="fa-solid fa-chevron-right" />
   </button>
+</div>
