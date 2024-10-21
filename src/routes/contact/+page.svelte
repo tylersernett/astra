@@ -1,21 +1,79 @@
 <script lang="ts">
+  import { ProgressRadial } from "@skeletonlabs/skeleton";
+
   let firstName = "";
   let lastName = "";
   let email = "";
   let phone = "";
   let message = "";
   let preferredContact = "";
+  let values = "";
+  let isSubmitting = false; // To track submission state
+  let errorMessage = "";
+  let successMessage = "";
+
+  function resetForm() {
+    firstName = "";
+    lastName = "";
+    email = "";
+    phone = "";
+    message = "";
+    preferredContact = "";
+    errorMessage = ""; // Reset error message
+    successMessage = "";
+    isSubmitting = false; // Reset submitting state
+  }
 
   function handleSubmit() {
+    // Prevent double submission by checking if isSubmitting is true
+    if (isSubmitting) return;
+
+    if (!preferredContact) {
+      errorMessage = "Please select a preferred contact method.";
+      return; // Prevent form submission
+    }
+
+    isSubmitting = true;
+    errorMessage = ""; // Clear any previous errors
+    successMessage = "";
+
     // Handle form submission logic here
-    console.log("form submitted:", {
+    let values = {
       firstName,
       lastName,
       email,
       phone,
       message,
       preferredContact,
-    });
+    };
+    fetch("https://formsubmit.co/ajax/18bc638385cb24c1a64570c305b13412", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        //successful response:
+        console.log("form submitted succesfully:", values);
+        resetForm(); // Reset the form upon successful submission
+        successMessage = "Message sent successfully!"; // Show success message
+      })
+      .catch((error) => {
+        console.error("There was a problem with the form submission:", error);
+        errorMessage =
+          "There was an error submitting the form. Please try again."; // Set error message
+        // setIsError(true);
+        // formik.setSubmitting(false)
+      })
+      .finally(() => {
+        isSubmitting = false; // Re-enable the submit button
+      });
   }
 </script>
 
@@ -25,7 +83,10 @@
   <div id="form holder" class="pb-8 card shadow-md p-8">
     <h2 class="h3 font-bold text-center">Message Us</h2>
     <p class="py-4 text-center">
-      To schedule an appointment with an Astra physician or to ask any questions, please send us a message below or call us at <a href="tel:817-xxx-xxxx">817-xxx-xxxx</a>.
+      To schedule an appointment with an Astra physician or to ask any
+      questions, please send us a message below or call us at <a
+        href="tel:817-xxx-xxxx">817-xxx-xxxx</a
+      >.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
       <!-- First Name and Last Name Row (2 columns on medium+ screens) -->
@@ -122,10 +183,24 @@
         <button
           type="submit"
           class="w-full p-2 btn variant-filled bg-primary-800"
+          disabled={isSubmitting}
         >
-          Submit
+          {#if isSubmitting}
+            <ProgressRadial value={undefined} width={"w-6"} /> &nbsp; Submitting...
+          {:else}
+            Submit
+          {/if}
         </button>
       </div>
+
+      {#if errorMessage}
+        <p class="text-red-500">{errorMessage}</p>
+      {/if}
+
+      <!-- Success Message -->
+      {#if successMessage}
+        <p class="text-green-700">{successMessage}</p>
+      {/if}
     </form>
   </div>
 
