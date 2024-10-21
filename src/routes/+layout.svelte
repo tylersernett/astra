@@ -207,9 +207,9 @@ afterNavigate(()=> {
         >
           <span class="font-bold">Astra Injury Rehabilitation Consultants</span>
           <span
-            ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6"
+            ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6" class='anchor'
               >209 Saint Louis Ave, Fort Worth, TX 76104</a
-            ><br/><a href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9"
+            ><br/><a href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9" class='anchor'
               >7148 Trail Lake Dr, Fort Worth, TX 76123</a
             ></span
           >
