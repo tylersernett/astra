@@ -237,7 +237,7 @@
 <div class="mx-auto w-4/5 pb-8">
   <iframe
     title="Map of Astra locations"
-    src="https://www.google.com/maps/d/embed?mid=1Vc4vdMJallukcKH66W59kbvEab4&ehbc=2E312F"
+    src="https://www.google.com/maps/d/embed?mid=1Nzdb52zLbNaZFrY7cK2AO4434nD0YN4&ehbc=2E312F&z=11"
     class="w-full"
     height="480"
   ></iframe>
