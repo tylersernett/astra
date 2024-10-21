@@ -1,11 +1,26 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-html, body { @apply h-full overflow-hidden; }
+
+html,
+body {
+  @apply h-full overflow-hidden;
+}
 
 :root [data-theme='vintage'] {
   --theme-font-family-base: 'lato', sans-serif;
   --theme-font-family-heading: 'lato', sans-serif;
+  /* --color-primary-50: 236 249 254;
+  --color-primary-100: 217 243 252;
+  --color-primary-200: 174 231 249;
+  --color-primary-300: 136 219 247;
+  --color-primary-400: 93 206 244;
+  --color-primary-500: 54 194 241;
+  --color-primary-600: 15 168 219;
+  --color-primary-700: 12 128 167;
+  --color-primary-800: 8 84 110;
+  --color-primary-900: 4 44 57;
+  --color-primary-950: 2 22 29; */
 }
 
 #blurred-bg {
