@@ -199,7 +199,7 @@
 
       <!-- Success Message -->
       {#if successMessage}
-        <p class="text-green-700">{successMessage}</p>
+        <p class="text-success-700">{successMessage}</p>
       {/if}
     </form>
   </div>
