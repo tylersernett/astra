@@ -10,10 +10,7 @@
         is a comprehensive network of board-certified physicians, 
         surgeons, imaging centers, and surgery centers dedicated to 
         providing medical care for personal injury patients in 
-        Fort Worth, Texas, and the surrounding areas. We specialize 
-        in treating patients injured in car accidents through medical liens 
-        and personal injury protection (PIP), ensuring you receive 
-        the necessary care without the immediate burden of medical costs.
+        Fort Worth, Texas, and the surrounding areas.
       </p>
       <p>
         If you've been injured in a car accident, it's crucial to get a 
