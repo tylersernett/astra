@@ -21,7 +21,7 @@
     <!-- style={{ flex: '1 1 50%', }} -->
     <div id="bio-images" class="flex-col basis-5/6 max-w-[260px] min-w-[260px] mx-auto pb-4">
       <img
-        src="images/riley-portrait-square.png"
+        src="images/riley-portrait-square.webp"
         alt="A portrait of Dr. Johnson smiling while wearing a navy blue suit in front of the Ft. Worth skyline"
         class="w-full rounded-full"
       />
