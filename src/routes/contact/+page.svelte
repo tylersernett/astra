@@ -85,7 +85,7 @@
     <p class="py-4 text-center">
       To schedule an appointment with an Astra physician or to ask any
       questions, please send us a message below or call us at <a
-        href="tel:817-xxx-xxxx">817-xxx-xxxx</a
+        href="tel:817-897-5190">817-897-5190</a
       >.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
@@ -227,7 +227,7 @@
       <p>Kevin Deosarran</p>
       <p>
         New Patient Scheduling Number: <br />
-        <a href="tel:817-xxx-xxxx" class="anchor">817-xxx-xxxx</a>
+        <a href="tel:817-897-5190" class="anchor">817-897-5190</a>
       </p>
     </div>
   </div>
