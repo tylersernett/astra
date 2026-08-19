@@ -8,7 +8,7 @@
       <p>
         Astra Injury Rehabilitation Consultants 
         is a comprehensive network of board-certified physicians, 
-        surgeons, imaging centers, and surgery centers, dedicated to 
+        surgeons, imaging centers, and surgery centers dedicated to 
         providing medical care for personal injury patients in 
         Fort Worth, Texas, and the surrounding areas. We specialize 
         in treating patients injured in car accidents through medical liens 
