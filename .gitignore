@@ -20,3 +20,13 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# old unoptimized originals, kept locally only
+images/xray-office.jpg
+images/skull-scan.jpg
+images/riley-op.png
+images/riley-machine-blue-4.png
+images/mri-point.jpg
+images/doctor-chart.jpg
+images/bg-mag.jpg
+images/riley-portrait-square.png
