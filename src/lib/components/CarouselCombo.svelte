@@ -13,21 +13,21 @@
   // ];
 
   let imageIds2 = [
-    "images/xray-office.jpg",
-    "images/riley-op.png",
-    "images/doctor-chart.jpg",
-    "images/mri-point.jpg",
+    "images/xray-office.webp",
+    "images/riley-op.webp",
+    "images/doctor-chart.webp",
+    "images/mri-point.webp",
     // "images/riley-machine-blue-3.png",
-    "images/riley-machine-blue-4.png",
+    "images/riley-machine-blue-4.webp",
     // "images/riley-machine-blue.png",
-    "images/skull-scan.jpg",
+    "images/skull-scan.webp",
   ];
 </script>
 
 <!-- Carousel Container with Background Image -->
 <div
   class="relative w-full md:h-[324px] bg-cover bg-center md:bg-fixed"
-  style="background-image: url('/images/bg-mag.jpg');"
+  style="background-image: url('/images/bg-mag.webp');"
 >
 <!-- BLUR -->
 <div id='blurred-bg' class="absolute inset-0" ></div>
