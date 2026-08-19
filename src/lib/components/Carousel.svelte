@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-
+  import ChevronLeft from "$lib/components/ChevronLeft.svelte";
+  import ChevronRight from "$lib/components/ChevronRight.svelte";
   let elemCarousel: HTMLDivElement;
   export let imageIds: string[] = [];
   let timeoutId: ReturnType<typeof setTimeout>;
@@ -42,45 +43,47 @@
     autoAdvanceCarousel(); // Start the auto-advance
     return () => clearTimeout(timeoutId); // Use the timeout ID to clear the timeout
   });
-
 </script>
 
 <!-- CAROUSEL -->
- <div
-  class='flex  items-center'
-  role="group" 
-  aria-label="Image carousel" 
-  on:mouseenter={pauseAutoAdvance}  
-  on:mouseleave={resumeAutoAdvance} 
- >
+<div
+  class="flex items-center"
+  role="group"
+  aria-label="Image carousel"
+  on:mouseenter={pauseAutoAdvance}
+  on:mouseleave={resumeAutoAdvance}
+>
   <!-- Button: Left -->
-  <button 
-    type="button" 
-    class="btn-icon variant-filled opacity-50  absolute left-1 z-10" 
+  <button
+    type="button"
+    class="btn-icon variant-filled opacity-50 absolute left-1 z-10"
     on:click={carouselLeft}
   >
-    <i class="fa-solid fa-chevron-left" />
+    <ChevronLeft />
   </button>
   <!-- Full Images -->
   <div
     bind:this={elemCarousel}
     class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden"
   >
-    {#each imageIds as imageId}
+    {#each imageIds as imageId, i}
       <img
         class="snap-center h-[130px] md:h-[260px] rounded-container-token object-contain"
         src={imageId}
         alt={imageId}
-        loading="lazy"
+        width="780"
+        height="520"
+        loading={i === 0 ? "eager" : "lazy"}
+        fetchpriority={i === 0 ? "high" : "auto"}
       />
     {/each}
   </div>
   <!-- Button: Right -->
   <button
     type="button"
-    class="btn-icon variant-filled opacity-50  absolute right-1 z-10 "
+    class="btn-icon variant-filled opacity-50 absolute right-1 z-10"
     on:click={carouselRight}
   >
-    <i class="fa-solid fa-chevron-right" />
+    <ChevronRight />
   </button>
 </div>

@@ -11,6 +11,7 @@
     getDrawerStore,
   } from "@skeletonlabs/skeleton";
   import CarouselCombo from "../lib/components/CarouselCombo.svelte";
+  import Bars from "$lib/components/Bars.svelte";
 
   initializeStores();
   const currentYear = new Date().getFullYear();
@@ -34,62 +35,55 @@
   }
 
   // $: classesActive = (href: string) => (href === $page.url.pathname ? '!variant-filled-primary' : '');
-    // Fix SvelteKit scrolling issue
-//     import { browser } from "$app/environment";
-//     import { afterNavigate, beforeNavigate } from "$app/navigation";
+  // Fix SvelteKit scrolling issue
+  //     import { browser } from "$app/environment";
+  //     import { afterNavigate, beforeNavigate } from "$app/navigation";
 
-// beforeNavigate(async (nav) => {
-//   if (!browser) return;
-//   document.getElementsByTagName("html")[0].classList.add("pageSwitch");
-// })
-// afterNavigate(async (nav) => {
-//   if (!browser) return;
-//   await tick();
-//   document.getElementsByTagName("html")[0].classList.remove("pageSwitch");
-// });
+  // beforeNavigate(async (nav) => {
+  //   if (!browser) return;
+  //   document.getElementsByTagName("html")[0].classList.add("pageSwitch");
+  // })
+  // afterNavigate(async (nav) => {
+  //   if (!browser) return;
+  //   await tick();
+  //   document.getElementsByTagName("html")[0].classList.remove("pageSwitch");
+  // });
 
+  ///////////////////  NAV FIX \\\\\\\\\\\
 
-///////////////////  NAV FIX \\\\\\\\\\\
+  import { afterNavigate, beforeNavigate } from "$app/navigation";
 
-import { afterNavigate, beforeNavigate } from "$app/navigation";
+  let contentDiv: HTMLDivElement;
+  let topDiv: HTMLDivElement;
+  import { page } from "$app/stores"; // Import the page store to access the current URL
 
-let contentDiv: HTMLDivElement;
-let topDiv: HTMLDivElement;
-import { page } from '$app/stores'; // Import the page store to access the current URL
+  // beforeNavigate((navigation) => {
+  //   return new Promise((resolve) => {
+  //     const transition = document.startViewTransition(async () => {
+  //       if (contentDiv) {
+  //         // Fix scroll
+  //         contentDiv.scrollTop = 0;
+  //       }
+  //       // resolve();
+  //       await navigation.complete;
+  //     });
+  //   });
+  // });
 
+  afterNavigate(() => {
+    if ($page.url.pathname === "/") {
+      topDiv.scrollIntoView({ behavior: "smooth" });
+    } else {
+      contentDiv.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
-// beforeNavigate((navigation) => {
-//   return new Promise((resolve) => {
-//     const transition = document.startViewTransition(async () => {
-//       if (contentDiv) {
-//         // Fix scroll
-//         contentDiv.scrollTop = 0;
-//       }
-//       // resolve();
-//       await navigation.complete;
-//     });
-//   });
-// });
-
-afterNavigate(()=> {
-  if ($page.url.pathname === '/') {
-    topDiv.scrollIntoView({behavior: 'smooth'})
-  } else {
-    contentDiv.scrollIntoView({behavior: 'smooth'})
-  }
-})
-
- // Function to check if a link is active
- $: currentPath = $page.url.pathname;
- $: isActive = (href: string) => currentPath === href ? 'underline underline-offset-2' : '';
-
+  // Function to check if a link is active
+  $: currentPath = $page.url.pathname;
+  $: isActive = (href: string) =>
+    currentPath === href ? "underline underline-offset-2" : "";
 </script>
-<style>
-  :global(html.pageSwitch) {
-    scroll-behavior: smooth;
-  }
 
-</style>
 <!-- MOBILE MENU -->
 <Drawer>
   <nav class="list-nav md:flex">
@@ -97,22 +91,30 @@ afterNavigate(()=> {
       <li class="hidden md:block"></li>
       <!-- dummy item because 1st list item formats weird -->
       <li>
-        <a href="/" on:click={() => drawerClose()} class={isActive('/')}>
+        <a href="/" on:click={() => drawerClose()} class={isActive("/")}>
           <span class="flex-auto uppercase">Home</span>
         </a>
       </li>
       <li>
-        <a href="/about" on:click={() => drawerClose()} class={isActive('/about')}>
+        <a
+          href="/about"
+          on:click={() => drawerClose()}
+          class={isActive("/about")}
+        >
           <span class="flex-auto uppercase">About</span>
         </a>
       </li>
       <li>
-        <a href="/contact" on:click={() => drawerClose()} class={isActive('/contact')}>
+        <a
+          href="/contact"
+          on:click={() => drawerClose()}
+          class={isActive("/contact")}
+        >
           <span class="flex-auto uppercase">Contact</span>
         </a>
       </li>
       <li>
-        <a href="/FAQ" on:click={() => drawerClose()} class={isActive('/FAQ')}>
+        <a href="/FAQ" on:click={() => drawerClose()} class={isActive("/FAQ")}>
           <span class="flex-auto uppercase">FAQ</span>
         </a>
       </li>
@@ -120,31 +122,36 @@ afterNavigate(()=> {
   </nav>
 </Drawer>
 
-<AppShell background='bg-gradient-to-bl from-primary-500/5 via-secondary-500/5 to-surface-500/5' >
-  <svelte:fragment slot="header" >
-    <AppBar 
+<AppShell
+  background="bg-gradient-to-bl from-primary-500/5 via-secondary-500/5 to-surface-500/5"
+>
+  <svelte:fragment slot="header">
+    <AppBar
       gridcolumns="grid-cols-3"
       slotdefault="place-self-center"
       slottrail="place-content-end"
       background="bg-gradient-to-bl from-primary-500/60 via-secondary-500/30 to-surface-500/5"
-      shadow='shadow-sm'
+      shadow="shadow-sm"
     >
       <svelte:fragment slot="lead">
         <!-- <img src='images/ASTRA_WHITE_VECTOR.svg' alt='Astra logo'/> -->
-        <h1 class="font-bold" >
-          <a href='/'>
-            <img src='images/ASTRA_COMBO.svg' alt='Astra logo' class='w-[240px] md:w-[300px]'/>
+        <h1 class="font-bold">
+          <a href="/">
+            <img
+              src="images/ASTRA_COMBO.svg"
+              alt="Astra logo"
+              class="w-[240px] md:w-[300px]"
+            />
           </a>
 
           <span class=" ">
             <!-- <img src='images/ASTRA_LOGO.svg' alt='Astra logo' class='w-[200px]'/> -->
-          <!-- <img src='images/ASTRA_TEXT.svg' alt='Astra logo' class='w-[300px]'/> -->
-        </span>
-  
+            <!-- <img src='images/ASTRA_TEXT.svg' alt='Astra logo' class='w-[300px]'/> -->
+          </span>
+
           <!-- <a href="/">Astra Injury Rehabilitation Consultants</a> -->
         </h1>
       </svelte:fragment>
-
 
       <svelte:fragment slot="trail">
         <!-- Hamburger Button for Small Screens -->
@@ -153,7 +160,7 @@ afterNavigate(()=> {
           on:click={drawerOpen}
           aria-label="Toggle Menu"
         >
-          <i class="fa-solid fa-bars"></i>
+          <Bars />
         </button>
 
         <!-- Navigation Menu -->
@@ -164,22 +171,22 @@ afterNavigate(()=> {
             <li></li>
             <!-- dummy item because 1st list item formats weird -->
             <li>
-              <a href="/" class={isActive('/')}>
+              <a href="/" class={isActive("/")}>
                 <span class="flex-auto uppercase">Home</span>
               </a>
             </li>
             <li>
-              <a href="/about" class={isActive('/about')}>
+              <a href="/about" class={isActive("/about")}>
                 <span class="flex-auto uppercase">About</span>
               </a>
             </li>
             <li>
-              <a href="/contact" class={isActive('/contact')}>
+              <a href="/contact" class={isActive("/contact")}>
                 <span class="flex-auto uppercase">Contact</span>
               </a>
             </li>
             <li>
-              <a href="/FAQ" class={isActive('/FAQ')}>
+              <a href="/FAQ" class={isActive("/FAQ")}>
                 <span class="flex-auto uppercase">FAQ</span>
               </a>
             </li>
@@ -193,9 +200,12 @@ afterNavigate(()=> {
   <!-- (sidebarRight) -->
   <!-- (pageHeader) -->
   <!-- Router Slot -->
-   <div bind:this={topDiv}></div>
+  <div bind:this={topDiv}></div>
   <CarouselCombo />
-  <div class="container mx-auto px-2 md:p-4 space-y-8  scrollTo" bind:this={contentDiv}>
+  <div
+    class="container mx-auto px-2 md:p-4 space-y-8 scrollTo"
+    bind:this={contentDiv}
+  >
     <slot></slot>
   </div>
   <!-- ---- / ---- -->
@@ -208,10 +218,11 @@ afterNavigate(()=> {
         >
           <span class="font-bold">Astra Injury Rehabilitation Consultants</span>
           <span
-            ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6" class='anchor'
+            ><a href="https://maps.app.goo.gl/3d7W2bJQqDQMCPjE6" class="anchor"
               >209 Saint Louis Ave, Fort Worth, TX 76104</a
-            ><br/><a href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9" class='anchor'
-              >7148 Trail Lake Dr, Fort Worth, TX 76123</a
+            ><br /><a
+              href="https://maps.app.goo.gl/z3kf9HN5ssMfgt7b9"
+              class="anchor">7148 Trail Lake Dr, Fort Worth, TX 76123</a
             ></span
           >
           <span><a href="tel:817-897-5190">817-897-5190</a></span>
@@ -234,3 +245,9 @@ afterNavigate(()=> {
     </div>
   </svelte:fragment>
 </AppShell>
+
+<style>
+  :global(html.pageSwitch) {
+    scroll-behavior: smooth;
+  }
+</style>
