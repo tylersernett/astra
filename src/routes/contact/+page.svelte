@@ -85,7 +85,7 @@
     <p class="py-4 text-center">
       To schedule an appointment with an Astra physician or to ask any
       questions, please send us a message below or call us at <a
-        href="tel:817-897-5190">817-897-5190</a
+        href="tel:817-897-5190" class="whitespace-nowrap">817-897-5190</a
       >.
     </p>
     <form on:submit|preventDefault={handleSubmit} class="space-y-4">
