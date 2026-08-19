@@ -13,6 +13,7 @@
   import CarouselCombo from "../lib/components/CarouselCombo.svelte";
 
   initializeStores();
+  const currentYear = new Date().getFullYear();
 
   const drawerStore = getDrawerStore();
   const drawerSettings: DrawerSettings = {
@@ -213,7 +214,7 @@ afterNavigate(()=> {
               >7148 Trail Lake Dr, Fort Worth, TX 76123</a
             ></span
           >
-          <span><a href="tel:817-xxx-xxxx">817-xxx-xxxx</a></span>
+          <span><a href="tel:817-897-5190">817-897-5190</a></span>
           <!-- <span
             ><a href="mailto:kdeosarran@astra-consultants.com"
               >kdeosarran@astra-consultants.com</a
@@ -223,7 +224,7 @@ afterNavigate(()=> {
 
         <div class="text-center py-8 pb-8">
           <h6 class="h6 text-sm">
-            Copyright © 2024 Astra Injury Rehabilitation Consultants
+            Copyright © {currentYear} Astra Injury Rehabilitation Consultants
             <br />
             Design:
             <a href="https://www.github.com/tylersernett">Tyler Johnson</a>
