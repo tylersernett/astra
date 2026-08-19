@@ -94,17 +94,17 @@
   <ul class="list-disc space-y-2 columns-1 md:columns-2 pt-4 px-8 pb-8">
     <li>Pain Medicine</li>
     <li>Sports Medicine</li>
-    <li>Orthopedic Surgery</li>
+    <!-- <li>Orthopedic Surgery</li> -->
     <li>Spine Surgery</li>
     <!-- <li>General Surgery</li> -->
-    <li>ENT Surgery</li>
+    <!-- <li>ENT Surgery</li> -->
     <!-- <li>Plastic and Reconstructive Surgery</li> -->
-    <li>PM&R Neurodiagnostics</li>
-    <li>Doctor of Dental Surgery (DDS)</li>
+    <li>PM&R</li>
+    <!-- <li>Doctor of Dental Surgery (DDS)</li> -->
     <!-- <li>Pharmacy</li> -->
     <li>Physical Therapy</li>
     <li>DBC Spine Rehabilitation</li>
-    <li>Work Conditioning and Return To Work Program</li>
+    <!-- <li>Work Conditioning and Return To Work Program</li> -->
     <li>Accredited Pain Procedure Center</li>
     <li>
       Accredited Imaging Centers (MRI, MR Arthrogram, CT, CT Arthrogram, X-ray,
@@ -112,7 +112,7 @@
     </li>
     <!-- <li>Accredited Hospital and Outpatient Surgical Center</li> -->
     <!-- <li>Neuropsychology</li> -->
-    <li>Neuro-Optometry</li>
+    <!-- <li>Neuro-Optometry</li> -->
     <li>Traumatic Brain Injury Rehabilitation</li>
   </ul>
   <h2 class="h2">Procedures</h2>
