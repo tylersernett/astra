@@ -8,8 +8,7 @@
     <p class="pt-4">
       We are a collaborative network of independent medical service providers 
       committed to delivering comprehensive care to patients injured in car 
-      accidents and other physical trauma, with costs covered 
-      through medical liens or personal injury protection.
+      accidents and other physical trauma.
     </p>
   </div>
 </div>
